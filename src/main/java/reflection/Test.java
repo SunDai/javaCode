@@ -48,6 +48,9 @@ public class Test {
             increase.invoke(o,3);
             getNum.invoke(o);
 
+            String returnType = setNum.getReturnType().getName();
+            System.out.println("returnType is "+returnType);
+
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (InstantiationException e) {
