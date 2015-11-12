@@ -1,4 +1,4 @@
-package hackerrank.algorithms;
+package hackerrank.algorithms.warmup;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
