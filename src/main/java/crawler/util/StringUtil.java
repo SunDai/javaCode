@@ -14,8 +14,8 @@ public class StringUtil {
         return arr;
     }
 
-    public static String changeIntToChineseNum(int i){
-        String result = "";
-        return result;
-    }
+//    public static String changeIntToChineseNum(int i){
+//        String result = "";
+//        return result;
+//    }
 }

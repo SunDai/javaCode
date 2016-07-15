@@ -23,7 +23,7 @@ public class NovelCrawler {
 
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        String baseUrl = "http://www.23wx.com/html/50/50658/";
+        String baseUrl = "http://www.23wx.com/html/49/49803/";
         String baseBody = Download.downloadAsString(baseUrl);
         Document root = Jsoup.parse(baseBody, baseUrl);
         List<Chapter> chapters = getBookChapters(root);

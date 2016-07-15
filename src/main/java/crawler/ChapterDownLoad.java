@@ -86,7 +86,7 @@ public class ChapterDownLoad implements Runnable{
             });
             String target = "C:\\Users\\xh\\Desktop\\";
             target = new String(target.getBytes(),"gbk");
-            String name = "anyejuwang.txt";
+            String name = "lingjianshan.txt";
             name = new String(name.getBytes(),"gbk");
             WriteUtil.WriteChapter2Book(list,target,name);
         }

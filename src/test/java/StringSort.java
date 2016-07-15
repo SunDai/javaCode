@@ -2,10 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by xh on 2015/11/27.
@@ -17,33 +14,34 @@ public class StringSort {
         BufferedReader br = new BufferedReader(fr);
         String line="";
         List<Url> urls = new ArrayList<Url>();
+        SortedSet<String> sortedSet = new TreeSet<String>();
         while ((line =br.readLine() )!= null){
-            Url url = new Url(line);
-            urls.add(url);
+//            Url url = new Url(line);
+//            urls.add(url);
+            String picUrl= line;
+            sortedSet.add(picUrl);
         }
-        Collections.sort(urls, new Comparator<Url>() {
-            public int compare(Url o1, Url o2) {
-                if (!o1.channel.equals(o2.channel)){
-                    return o1.channel.compareTo(o2.channel);
-                }else {
-                    return o1.titleEmpty+o1.contentEnmpty+o1.pubStrEmpty-(o2.titleEmpty+o2.contentEnmpty+o2.pubStrEmpty);
-                }
-            }
-        });
+//        Collections.sort(urls, new Comparator<Url>() {
+//            public int compare(Url o1, Url o2) {
+//                if (!o1.channel.equals(o2.channel)){
+//                    return o1.channel.compareTo(o2.channel);
+//                }else {
+//                    return o1.titleEmpty+o1.contentEnmpty+o1.pubStrEmpty-(o2.titleEmpty+o2.contentEnmpty+o2.pubStrEmpty);
+//                }
+//            }
+//        });
         FileWriter fw = new FileWriter("C:\\Users\\xh\\Desktop\\sortedUrls.txt");
-        for (Url url:urls){
-            fw.write(url.msg);
+//        for (Url url:urls){
+//            fw.write(url.msg);
+//            fw.write("\n");
+//        }
+        for (String url:sortedSet){
+            fw.write(url);
             fw.write("\n");
         }
         fw.flush();
         fw.close();
         System.out.println("done!");
-//        Url url = new Url("http://world.people.com.cn/n/2012/1022/c1002-19341197.html title is empty content is empty pubDate String is empty");
-//        System.out.println("url is "+url.url);
-//        System.out.println("title is "+url.titleEmpty);
-//        System.out.println("content is "+url.contentEnmpty);
-//        System.out.println("pubDate is "+url.pubStrEmpty);
-//        System.out.println("channel is "+url.channel);
     }
 
     static class Url{
